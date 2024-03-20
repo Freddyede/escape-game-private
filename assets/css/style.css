@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.room {
+    width: 100vw;
+    height: 100vh;
+    font-size: 24px;
+}
+#room0 {
+    background-color: var(--background-room-0);
+}
+#room1 {
+    background-color: var(--background-room-1);
+}
+
+#room2 {
+    background-color: var(--background-room-2);
+}
+
+#room3 {
+    background-color: var(--background-room-3);
+}
+
+#room4 {
+    background-color: var(--background-room-4);
+}
+
+.room button[data-key="key1"] {
+    position: var(--buttons-position);
+    top: var(--button-twenty-percent);
+    left: 2%;
+}
+.room button[data-key="key2"] {
+    position: var(--buttons-position);
+    top: var(--button-twenty-percent);
+    right: var(--button-twenty-percent);
+}
+.room button[data-key="key3"] {
+    position: var(--buttons-position);
+    bottom: var(--thirteen-percent);
+    left: var(--button-twenty-percent);
+}
+
+.room button[data-key="key2"],
+.room button[data-key="key3"],
+.room button[data-key="key1"] {
+    padding: 1em;
+}
+
+.inventory-item {
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: var(--display-flex);
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-navbar);
+}
+
+.navbar button {
+    width: var(--thirteen-percent);
+    height: 5vh;
+    margin: 10px;
+}
+.inventory {
+    display: var(--display-flex);
+    width: var(--thirteen-percent);
+}
+/*  CANVAS ELEMENTS  */
+.canvasElement {
+    width: var(--hundred-percent);
+    margin: auto;
+}

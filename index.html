@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Escape Game</title>
+        <!--  Object POO et modules  -->
+        <script src="src/Elements/Modules/CanvasModules.js" type="module" defer></script>
+        <script src="src/Elements/Modules/DomModules.js" type="module" defer></script>
+        <script src="src/Elements/Modules/ArrayModules.js" type="module" defer></script>
+        <script src="src/Elements/Utils/Timer.js" type="module" defer></script>
+        <script src="src/Elements/Controllers/EventController.js" type="module" defer></script>
+        <script src="src/Elements/Controllers/ImagesController.js" type="module" defer></script>
+        <script src="src/Elements/Controllers/CanvasController.js" type="module" defer></script>
+        <script src="src/Elements/Controllers/DomController.js" type="module" defer></script>
+        <script src="src/Elements/Abstract/GameEngine.js" type="module" defer></script>
+        <!--  Script javascript  -->
+        <script src="assets/js/elements.js" type="module" defer></script>
+        <script src="assets/js/navigation.js" type="module" defer></script>
+        <script src="assets/js/inventory.js" type="module" defer></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+        <link rel="stylesheet" href="assets/css/variables.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <button id="prevBtn">◄ Précédent</button>
+            <menu class="inventory">
+                <button class="inventory-item item1"><i class="fas fa-glasses"></i></button>
+                <button class="inventory-item item2"><i class="fas fa-wand-magic"></i></button>
+                <button class="inventory-item item3"><i class="fas fa-sun"></i></button>
+            </menu>
+            <button id="nextBtn">Suivant ►</button>
+        </nav>
+
+        <section id="room0" class="room">
+            <!-- Démarrage du jeu -->
+        </section>
+        
+        <section id="room1" class="room">
+            <!-- Contenu de la salle de Hamed -->
+            <button class="room-key" data-key="key2"><i class="fas fa-wand-magic"></i></button>
+        </section>
+
+        <section id="room2" class="room">
+            <!-- Contenu de la salle de Sonia -->
+            <button class="room-key" data-key="key1"><i class="fas fa-glasses"></i></button>
+        </section>
+
+        <section id="room3" class="room">
+            <!-- Contenu de la salle de Franck -->
+            <button class="room-key" data-key="key3"><i class="fas fa-sun"></i></button>
+            <canvas id="canvas" class="canvasElement"></canvas>
+        </section>
+
+        <section id="room4" class="room">
+            <!-- Contenu de la salle de Gaëtan -->
+        </section>
+    </body>
+</html>
