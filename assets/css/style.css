@@ -101,10 +101,62 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 400;
+    z-index: 50;
     background-image: url("https://w0.peakpx.com/wallpaper/413/615/HD-wallpaper-tv-show-rick-and-morty-breaking-bad-morty-smith-rick-sanchez.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    .gamePresentation {
+        font-family: var(--room3-font-family-text-element);
+        font-size: 3.5rem;
+        color: rgb(255, 255, 255);
+        top: 5%;
+        text-align: center;
+        left: 27.5%;
+        text-decoration: underline;
+        position: absolute;
+        text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.38),
+        0 0 21px #88039b,
+        0 0 42px #88039b,
+        0 0 82px #88039b,
+        0 0 92px #88039b,
+        0 0 102px #88039b,
+        0 0 151px #88039b;
+
+    }
+    .playButtonRoom3 {
+        position: absolute;
+        width: 250px;
+        height: 45px;
+        border-radius: 5px;
+        z-index: 2;
+        outline: none;
+        cursor: pointer;
+        top:50%;
+        font-family: var(--room3-font-family-button-element);
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
+            0 0 10px rgba(255, 255, 255, 0.38),
+            0 0 21px #88039b,
+            0 0 42px #88039b,
+            0 0 82px #88039b,
+            0 0 92px #88039b,
+            0 0 102px #88039b,
+        0 0 151px #88039b;
+        background-color: #000000;
+        letter-spacing: 1rem;
+        left: 42.5%;
+        &:hover {
+            text-shadow: none;
+        }
+        &:active {
+            color: #FF0000;
+        }
+    }
 }
 
 .room-key {
@@ -117,4 +169,70 @@ canvas {
     align-items: center;
     justify-content: center;
     z-index: 3;
+}
+@media (max-width: 1548px) {
+    .menu {
+        border: 1px solid red;
+        width: 100vw;
+        height: 95%;
+        background-image: url("https://w0.peakpx.com/wallpaper/413/615/HD-wallpaper-tv-show-rick-and-morty-breaking-bad-morty-smith-rick-sanchez.jpg");
+        background-repeat: no-repeat;
+
+        .gamePresentation {
+            font-family: var(--room3-font-family-text-element);
+            font-size: 3.5rem;
+            color: rgb(255, 255, 255);
+            top: 5%;
+            text-align: center;
+            left: 5%;
+            text-decoration: underline;
+            position: absolute;
+            text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
+            0 0 10px rgba(255, 255, 255, 0.38),
+            0 0 21px #88039b,
+            0 0 42px #88039b,
+            0 0 82px #88039b,
+            0 0 92px #88039b,
+            0 0 102px #88039b,
+            0 0 151px #88039b;
+
+        }
+        .playButtonRoom3 {
+            position: absolute;
+            width: 250px;
+            height: 45px;
+            border-radius: 5px;
+            z-index: 2;
+            outline: none;
+            cursor: pointer;
+            top:50%;
+            font-family: var(--room3-font-family-button-element);
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
+            0 0 10px rgba(255, 255, 255, 0.38),
+            0 0 21px #88039b,
+            0 0 42px #88039b,
+            0 0 82px #88039b,
+            0 0 92px #88039b,
+            0 0 102px #88039b,
+            0 0 151px #88039b;
+            background-color: #000000;
+            letter-spacing: 1rem;
+            left: 35.5%;
+            &:hover {
+                text-shadow: none;
+            }
+            &:active {
+                color: #FF0000;
+            }
+        }
+    }
+    canvas {
+        width: 100%;
+        border: 1px solid red;
+    }
 }
