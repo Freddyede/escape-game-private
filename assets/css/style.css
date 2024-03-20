@@ -77,3 +77,44 @@
     width: var(--hundred-percent);
     margin: auto;
 }
+
+.hide {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+canvas {
+    position: relative;
+    background-image: url("https://ae01.alicdn.com/kf/HTB1_UM4aEzrK1RjSspmq6AOdFXak.jpg_640x640Q90.jpg_.webp");
+    width: 100%;
+    height: 92.9%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu {
+    width: 100%;
+    height: 92.9%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 400;
+    background-image: url("https://w0.peakpx.com/wallpaper/413/615/HD-wallpaper-tv-show-rick-and-morty-breaking-bad-morty-smith-rick-sanchez.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.room-key {
+    position: absolute;
+    top: 30px;
+    border: 1px solid blue;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
