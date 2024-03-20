@@ -1,5 +1,4 @@
-import {pushArrayModules, verifyIsArrayModules} from "../Utils/modules.js";
-import {ArrayModules} from "../Modules/ArrayModules";
+import {ArrayModules} from "../Modules/ArrayModules.js";
 
 /**
  * Génération une ou plusieurs images avec comme information ses sources et ses positions initiales
