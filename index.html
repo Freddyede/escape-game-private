@@ -3,24 +3,16 @@
     <head>
         <meta charset="utf-8" />
         <title>Escape Game</title>
-        <!--  Object POO et modules  -->
-        <script src="src/Elements/Modules/CanvasModules.js" type="module" defer></script>
-        <script src="src/Elements/Modules/DomModules.js" type="module" defer></script>
-        <script src="src/Elements/Modules/ArrayModules.js" type="module" defer></script>
-        <script src="src/Elements/Utils/Timer.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/EventController.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/ImagesController.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/CanvasController.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/DomController.js" type="module" defer></script>
-        <script src="src/Elements/Abstract/GameEngine.js" type="module" defer></script>
-        <!--  Script javascript  -->
+        <script src="src/Utils/modules.js" type="module" defer></script>
+        <script src="src/Abstract/Event.js" type="module" defer></script>
+        <script src="src/Controllers/DomController.js" type="module" defer></script>
         <script src="assets/js/elements.js" type="module" defer></script>
         <script src="assets/js/navigation.js" type="module" defer></script>
         <script src="assets/js/inventory.js" type="module" defer></script>
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
         <link rel="stylesheet" href="assets/css/variables.css" />
         <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/room2.css">
     </head>
     <body>
         <nav class="navbar">
@@ -29,6 +21,7 @@
                 <button class="inventory-item item1"><i class="fas fa-glasses"></i></button>
                 <button class="inventory-item item2"><i class="fas fa-wand-magic"></i></button>
                 <button class="inventory-item item3"><i class="fas fa-sun"></i></button>
+                <button id="btn_key" class="inventory-item item4"><i class="fa-solid fa-key"></i></button>
             </menu>
             <button id="nextBtn">Suivant ►</button>
         </nav>
@@ -39,22 +32,53 @@
         
         <section id="room1" class="room">
             <!-- Contenu de la salle de Hamed -->
-            <button class="room-key" data-key="key2"><i class="fas fa-wand-magic"></i></button>
+            <button class="room-key" data-key="key1"><i class="fas fa-wand-magic"></i></button>
         </section>
-
+        
         <section id="room2" class="room">
             <!-- Contenu de la salle de Sonia -->
-            <button class="room-key" data-key="key1"><i class="fas fa-glasses"></i></button>
-        </section>
+            <div class="main">
+                <div class="room-02" id="room-02">
+                    <img id="serrure" class="serrure" src="./assets/images/room2/Serrure2.png" />
+                    <img id = "key" class="key" data-key="key4" src="./assets/images/room2/key.png"/>
+                    <img id="coffre1" class="coffre1" src="./assets/images/room2/coffre.png" />
+                    <img id="coffre2" class="coffre2" src="./assets/images/room2/coffre2.png"/>
+                    <img id="parchemin" class="parchemin" data-key="key2" src="./assets/images/room2/parchemin.png">
+                    <img class="fontome" src="./assets/images/room2/fontome.png"/>
+                    <img id="armoire" class="armoire_Closed" src="./assets/images/room2/armoire_Closed.png" />
+                    <img id="detracor" class="detracor" src="./assets/images/room2/detracor.png" />
+                    <img id="game_over" class="game_over" src="./assets/images/room2/game_over.png" />
+                    <img id="safe" class="safe" src="./assets/images/room2/safe.png"/>
+                    <img id="success" class="success" src="./assets/images/room2/success.png"/>
+                    <audio id="sound_game_over" src="./assets/sound/sound-game-over.mp3" ></audio>
+                    <audio id="sound_success" src="./assets/sound/next-level-160613.mp3" ></audio>
+                    <button id="btn_restart" class="btn_restart">Rejouer ►</button>
 
-        <section id="room3" class="room">
-            <!-- Contenu de la salle de Franck -->
-            <button class="room-key" data-key="key3"><i class="fas fa-sun"></i></button>
-            <canvas id="canvas" class="canvasElement"></canvas>
-        </section>
+                    <div id="room2Dialog">
+                        <div id="roomBoxDialog">
+                          <h3 id="dialogH3">Dialog Title</h3>
+                          <p id="dialogP">This is a dialog box. You can put any content here.</p>
+                          <div class="divBtnClose">
+                            <button id="closeDialog">Fermer</button>
+                          </div>
+                        </div>
+                      </div>
 
+                </div>
+            </div>    
+                <!-- <button class="room-key" data-key="key2"><i class="fas fa-wand-magic"></i></button> -->
+            </section>
+            <!-- <input type="image" src="key.png" alt=""> -->
+            
+            
+            <section id="room3" class="room">
+                <!-- Contenu de la salle de Franck -->
+                <button class="room-key" data-key="key3"><i class="fas fa-sun"></i></button>
+            </section>
+            
         <section id="room4" class="room">
             <!-- Contenu de la salle de Gaëtan -->
         </section>
+        <script src="assets/js/room2.js"  type="module"></script>
     </body>
-</html>
+    </html>
