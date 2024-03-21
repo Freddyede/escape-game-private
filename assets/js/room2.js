@@ -24,7 +24,7 @@ const closeDialog = document.getElementById('closeDialog');
 let isParchemin = false
 let isKey = false
 
-// saisir le code pour ouvrir le coffre
+
 coffre1.addEventListener("click", function () {
     const key = prompt("Veuiller saisir le code svp! ")
 
@@ -38,13 +38,13 @@ coffre1.addEventListener("click", function () {
 });
 
 
-// recuperer le parchemin
+
 parchemin.addEventListener("click", function () {
     isParchemin = true
 });
 
 
-// recuperer la cle
+
 key.addEventListener("click", function () {
     if(!isParchemin){
         dialog('flex', "Parchemin abscent !", "Veuillez recuperer le parchemin avant svp!")
@@ -55,7 +55,7 @@ key.addEventListener("click", function () {
      } 
 });
 
-//sauve qui peut hh
+
 serrure.addEventListener("click", function () {
     if(!isParchemin){
        dialog('flex', "Parchemin abscent !", "Veuillez recuperer le parchemin avant svp!")
@@ -70,7 +70,6 @@ serrure.addEventListener("click", function () {
 });
 
 
-// au click sur l'armoir (game over)
 armoire.addEventListener("click", function () {
     detracor.style.visibility = "visible" ;
     detracor.style.animation = "avancerEtGrandir 6s ease-in-out forwards"
@@ -85,7 +84,7 @@ armoire.addEventListener("click", function () {
       }, "2000");
 });
 
-// rejouer
+
 btn_restart.addEventListener("click", function () {
     isParchemin = false
     isKey = false
@@ -102,7 +101,7 @@ btn_restart.addEventListener("click", function () {
     safe.style.visibility = "visible";
 });
 
-// fermer la boite de dialogue
+
 closeDialog.addEventListener("click", function () {
     dialog("none", "", "")
 });

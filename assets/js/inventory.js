@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // key4.addEventListener("click", function () {
     //     item4.style.display = "inline-block";
-    //     console.log("ho)");
+    //     
     // });
 
 });
