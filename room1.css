@@ -1,0 +1,198 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    font-family: 'Arial', sans-serif;
+}
+
+.scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+
+.corridor {
+    position: absolute;
+    bottom: 20%;
+    height: 60%;
+    width: 10%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.8);
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5);
+    transform-style: preserve-3d;
+}
+
+#corridor-left {
+    left: 25%;
+    transform: translateZ(-200px) translateX(-50%);
+}
+
+#corridor-right {
+    right: 25%;
+    transform: translateZ(-200px) translateX(50%);
+}
+
+#timer, #result {
+    z-index: 1000;
+    position: absolute;
+    color: white;
+}
+
+#timer {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+}
+
+#result {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+}
+
+
+button:hover {
+    background-color: #00cc00;
+}
+
+#door1 {
+    bottom: 20%;
+    left: 25%;
+}
+
+#door2 {
+    bottom: 20%;
+    right: 25%;
+}
+
+.navbar {
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.room-key {
+    z-index: 1000;
+    position: absolute;
+}
+
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    0deg,
+    transparent 0%,
+    rgba(32, 128, 32, 0.2) 2%,
+    rgba(32, 128, 32, 0.8) 3%,
+    rgba(32, 128, 32, 0.2) 3%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  animation: scan 10.s linear 0s infinite;
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%,
+  100% {
+    background-position: 0 100vh;
+  }
+}
+
+.wall {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    border: 2px solid rgba(0, 255, 0, 0.8);
+}
+
+#left-wall {
+    transform: rotateY(90deg) translateX(-50%);
+    transform-origin: left center;
+    left: 0;
+}
+
+#right-wall {
+    transform: rotateY(-90deg) translateX(50%);
+    transform-origin: right center;
+    right: 0;
+}
+
+#front-wall {
+    transform: translateZ(-400px);
+}
+
+.wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-style: preserve-3d;
+}
+
+#left-wall {
+    transform: rotateY(90deg) translateX(-50vw);
+}
+
+#right-wall {
+    transform: rotateY(-90deg) translateX(50vw);
+}
+
+.overlay, .scene, .wall {
+    z-index: 1; 
+}
+.corridor {
+    cursor: pointer; 
+}
+
+.door {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.door > button {
+    width: 100%; 
+    height: 100%; 
+    background-color: transparent; 
+    border: none;
+    color: white;
+    font-size: 1.5em; 
+}
+
+.door > button:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+
+
+.corridor, .door {
+    z-index: 10;
+}
