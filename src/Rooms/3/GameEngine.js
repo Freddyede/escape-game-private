@@ -39,6 +39,12 @@ class GameEngine {
             new Drawable(  200, 600, 'assets/img/police_car.png'),
             new PoliceCar(  400, 550),
             new Drawable(350, 850, 'assets/img/police_car.png'),
+            new PoliceCar(  220, 550),
+            new Drawable( 300, 500, 'assets/img/police_car.png'),
+            new PoliceCar( 200, 800),
+            new Drawable(  200, 600, 'assets/img/police_car.png'),
+            new PoliceCar(  400, 550),
+            new Drawable(350, 850, 'assets/img/police_car.png'),
             new PoliceCar(  220, 550)
         ]
     }
@@ -125,7 +131,7 @@ class GameEngine {
         for (let item of this.items)
         {
             if (collision(this.player, item)) {
-                return true
+                return true;
             }
             item.y -= 1
         }
@@ -135,6 +141,11 @@ class GameEngine {
     collisionBorder() {
         if (this.player.x < 0) {
             this.player.x = 0
+        }
+        for (const item of this.items) {
+            if(item.y <= 0) {
+                item.y = this.canvas.height;
+            }
         }
         if (this.player.y < 0) {
             this.player.y= 0
@@ -201,6 +212,9 @@ class GameEngine {
         document.getElementById('contentMenu').innerText = 'Vous avez gagné !!!';
         document.getElementById('startBtn').innerText = 'Restart the Game';
         document.getElementById('menu').style = 'display: flex';
+        document.getElementById('menu').style = 'background-image: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/09/rick-and-morty-vat-of-acid.jpg")';
+        document.getElementById('menu').classList.add('hide');
+        document.getElementById('game').classList.add('hide');
     }
 }
 
