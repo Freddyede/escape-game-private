@@ -1,0 +1,241 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: grid;
+    height: 100vh;
+    place-items: center; 
+    background-image: url("../images/room2/font-ecran2.png");
+    width: 100%;
+    background-size: 100%, auto;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+}
+
+.room-02{
+    width: 70%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-size: 100% 80vh;
+}
+
+.serrure{
+    height: 4%;
+    position: absolute;
+    right: 51%;
+    bottom: 35%;
+    cursor: grab;
+}
+
+.serrure:hover{
+    width: 12px;
+    height: 12px;
+    background-color: rgb(114, 70, 70);
+}
+
+.key {
+    height: 2%;
+    position: absolute;
+    right: 15%;
+    bottom: 12%;
+    cursor: grabbing;
+    animation: vibration 3s ease-in-out infinite; 
+}
+  @keyframes vibration {
+    0% {
+      transform: translateX(0) rotate(0) scale(1);
+    }
+    25% {
+      transform: translateX(-4px) rotate(-2deg) scale(1.1);
+    }
+    50% {
+      transform: translateX(4px) rotate(2deg) scale(1.1);
+    }
+    75% {
+      transform: translateX(-4px) rotate(-2deg) scale(1.1);
+    }
+    100% {
+      transform: translateX(0) rotate(0) scale(1);
+    }
+  }
+  
+
+.key:hover {
+    width: 13px;
+    height: 15px;
+    background-color: grey;
+}
+
+.coffre1{
+    height: 13%;
+    position: absolute;
+    right: 72%;
+    bottom: 9%;
+    cursor: pointer;
+}
+
+.coffre2{
+    height: 13%;
+    position: absolute;
+    right: 72%;
+    bottom: 9%;
+    visibility: hidden;
+}
+
+.parchemin{
+  height: 7%;
+  position: absolute;
+  right: 74%;
+  bottom: 9%;
+  cursor:grabbing;
+  visibility: hidden;
+}
+
+.safe{
+  height: 24%;
+  position: absolute;
+  right: 18%;
+  bottom: 14%;
+  transition: transform 0.5s ease;
+}
+.safe:hover {
+  transform: scale(1.2);
+}
+
+.btn_restart {
+  visibility: hidden;
+  position: absolute;
+  right: 45%;
+  bottom: 9%;
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  background-color: brown;
+  color: aliceblue;
+  font-size: large;
+  border: 0px;
+  border-radius: 40px;
+}
+
+.fontome {
+    height: 20%;
+    position: absolute;
+    right: 30%;
+    bottom: 38%;
+    animation: allerRetour 2s ease-in-out infinite;}
+
+  @keyframes allerRetour {
+    0% {
+       transform: translateX(0);
+       }
+       50% {
+       transform: translateX(75px);
+       }
+       100% {
+       transform: translateX(0);
+       }
+    }
+
+.armoire_Closed {
+    height: 27%;
+    position: absolute;
+    right: 65%;
+    bottom: 21%;
+    transform-origin: bottom; 
+    animation: balancement 2s ease-in-out infinite;
+    cursor: pointer;
+  }
+
+  @keyframes balancement {
+    0% {
+    transform: rotateX(0);
+    }
+    50% {
+    transform: rotateX(20deg);
+    }
+    100% {
+    transform: rotateX(0); 
+    }
+    }
+
+.detracor {
+    visibility: hidden;
+    width: 15%;
+    position: absolute;
+    right: 50%;
+    margin-top: 40%;
+    animation: avancerEtGrandir 8s ease-in-out forwards; 
+}
+
+.game_over {
+  visibility: hidden;
+  width: 65%;
+  height: 80%;
+  position: absolute;
+}
+
+.success {
+  visibility: hidden;
+  width: 65%;
+  height: 84%;
+  position: absolute;
+}
+@keyframes avancerEtGrandir {
+    0% {
+      
+      transform: translateZ(0) scale(1); 
+    }
+    100% {
+      transform: translateZ(-1000px) scale(30);
+    }
+  }
+
+  #room2Dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #roomBoxDialog {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 80%;
+  }
+
+  .divBtnClose {
+    text-align: center;
+  }
+
+  #roomBoxDialog h3 {
+    text-align: center;
+    font-family: cursive
+  }
+
+  #roomBoxDialog p {
+    margin-top: 20px;
+    font-family: cursive
+  }
+
+  
+  .divBtnClose button {
+    background-color: #212325;
+    color: #FFF;
+    padding: 12px 30px;
+    font-size:smaller;
+    align-items: center;
+    border: 0px;
+    height: 37px;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
