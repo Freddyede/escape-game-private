@@ -1,5 +1,5 @@
 import { EventController } from './EventController.js'
-import { DomModules } from "../Modules/DomModules";
+import { DomModules } from "../Modules/DomModules.js";
 /**
  * Parent of all other object secondary classes
  */

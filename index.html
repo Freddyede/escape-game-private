@@ -5,8 +5,8 @@
         <title>Escape Game</title>
         <!--  Object POO et modules  -->
         <script src="src/Elements/Modules/CanvasModules.js" type="module" defer></script>
-        <script src="src/Elements/Modules/DomModules.js" type="module" defer></script>
-        <script src="src/Elements/Modules/ArrayModules.js" type="module" defer></script>
+        <!-- <script src="src/Elements/Modules/DomModules.js" type="module" defer></script> -->
+        <!-- <script src="src/Elements/Modules/ArrayModules.js" type="module" defer></script> -->
         <script src="src/Elements/Utils/Timer.js" type="module" defer></script>
         <script src="src/Elements/Controllers/EventController.js" type="module" defer></script>
         <script src="src/Elements/Controllers/ImagesController.js" type="module" defer></script>
@@ -17,10 +17,13 @@
         <script src="assets/js/elements.js" type="module" defer></script>
         <script src="assets/js/navigation.js" type="module" defer></script>
         <script src="assets/js/inventory.js" type="module" defer></script>
+        <script src="script.js" type="module" defer></script>
+
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
         <link rel="stylesheet" href="assets/css/variables.css" />
         <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="room1.css">
     </head>
     <body>
         <nav class="navbar">
@@ -36,11 +39,28 @@
         <section id="room0" class="room">
             <!-- Démarrage du jeu -->
         </section>
-        
-        <section id="room1" class="room">
-            <!-- Contenu de la salle de Hamed -->
+                    <!-- Contenu de la salle de hamed -->
+        <section id="room1" class="room matrix">
+            <div class="noise"></div>
+            <div class="overlay"></div>
+            <div class="terminal">
+                <div class="scene">
+                    <div class="wall" id="left-wall"></div>
+                    <div class="wall" id="right-wall"></div>
+                    <div class="corridor" id="corridor-left">
+                        <button id="door1">Porte 1</button>
+                    </div>
+                    <div class="corridor" id="corridor-right">
+                        <button id="door2">Porte 2</button>
+                    </div>
+                    <div class="pillar pillar-left"></div>
+                    <div class="pillar pillar-right"></div>
+                </div>
+            </div>
+            <div id="timer"><span>30</span> secondes restantes</div>
+            <div id="result"></div>
             <button class="room-key" data-key="key2"><i class="fas fa-wand-magic"></i></button>
-        </section>
+        </section>   
 
         <section id="room2" class="room">
             <!-- Contenu de la salle de Sonia -->
