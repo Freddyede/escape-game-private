@@ -1,5 +1,5 @@
 import { EventController } from './EventController.js'
-import { DomModules } from "../Modules/DomModules";
+import { DomModules } from "../Modules/DomModules.js";
 /**
  * Parent of all other object secondary classes
  */
@@ -14,12 +14,7 @@ export class DomController extends EventController {
         return this.elements;
     }
     setElement(element) {
-        if(typeof element !== 'string'){
-            this.elements = document.createElement("div");
-            this.elements.setAttribute('id', element);
-        } else {
-            document.querySelector('#' + element);
-        }
+        this.elements = document.getElementById(element);
     }
     setPosElement(element) {
         this.pos = {
@@ -33,7 +28,7 @@ export class DomController extends EventController {
     }
 
     setPosX(number) {
-        this.elements.style.left = number + 'px';
+        this.elements.style.left = number + window.scrollX + 'px';
         this.setPosElement(this.elements);
     }
     getPosY() {
@@ -42,8 +37,5 @@ export class DomController extends EventController {
     setPosY(number) {
         this.elements.style.top = number + 'px';
         this.setPosElement(this.elements);
-    }
-    setEventListener(callBack) {
-        return this.setDocumentListener(this.elements, this.listenerElement.click, callBack);
     }
 }

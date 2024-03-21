@@ -94,7 +94,7 @@ const dialog5 = () => {
 }
 
 const dialog6 = () => {
-    dialog(`assets/room0/morty-desesper.png`,`ayayay`, soundMorty3)
+    dialog(`assets/images/room0/morty-desesper.png`,`ayayay`, soundMorty3)
 }
 const dialog7 = () => {
     dialog(`assets/images/room0/rick.person.png`,` Bref, essaie de te débarrasser de cette obsession, Morty. Ou alors, va rejoindre le club de fans de Harry Potter et laisse-moi tranquille avec ça. Allez, on a du boulot à faire. Rick, terminé.`, soundRick4)
@@ -104,7 +104,7 @@ const dialog8 = () => {
     dialog(`assets/images/room0/morty-choque.png`,`Attends, Rick, que dois-je faire pour sortir de cette boucle ?`, soundMorty4)
 }
 const dialog9 = () => {
-    dialog(`../images/room0/rick.person.png`,` Ah, tu as finalement décidé de prêter attention. Bien, voici ce que tu dois faire : tu dois parcourir les trois univers magiques que j'ai créés et trouver les objets nécessaires pour t'échapper. Mais attention, Morty, ce ne sera pas facile. Il te faudra attraper le balai magique dans le quatrième univers en combinant les objets de ton inventaire, pour pouvoir voler jusqu'à la sortie de cette tour enchantée.`, soundRick5)
+    dialog(`assets/images/room0/rick.person.png`,` Ah, tu as finalement décidé de prêter attention. Bien, voici ce que tu dois faire : tu dois parcourir les trois univers magiques que j'ai créés et trouver les objets nécessaires pour t'échapper. Mais attention, Morty, ce ne sera pas facile. Il te faudra attraper le balai magique dans le quatrième univers en combinant les objets de ton inventaire, pour pouvoir voler jusqu'à la sortie de cette tour enchantée.`, soundRick5)
 }
 const dialog10 = () => {
     dialog(`assets/images/room0/morty-enerve.png`,` Un balai magique ? Comme dans ces vieux films de sorciers ?`, soundMorty5)

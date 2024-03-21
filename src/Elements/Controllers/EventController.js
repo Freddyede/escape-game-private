@@ -1,8 +1,8 @@
 export class EventController {
-    listenerElement = {
+    static listenerElement = {
         click: 'click'
     }
-    listenerMouse = {
+    static listenerMouse = {
         move: 'mousemove',
         leave: 'mouseleave',
         enter: 'mouseenter'

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 :root {
     /* COMMONS */
     --display-flex: flex;
@@ -8,6 +10,9 @@
     --background-room-4: #ffff99;
     --background-navbar: #f0f0f0;
     --black-solid-border: 1px solid #000000;
+    /* ROOM 3 */
+    --room3-font-family-button-element: "Rubik Glitch", system-ui;
+    --room3-font-family-text-element: "Aleo", serif;
     /* assets/css/style.css */
     --buttons-position: absolute;
     --button-twenty-percent: 20%;

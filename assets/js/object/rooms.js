@@ -1,0 +1,1 @@
+export const buttonHideMenu = e => e.parentElement.classList.add('hide');
