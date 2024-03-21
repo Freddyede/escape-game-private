@@ -28,22 +28,56 @@
         <script src="script.js" type="module" defer></script>
 
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-        <link rel="stylesheet" href="assets/css/variables.css" />
-        <link rel="stylesheet" href="assets/css/style.css" />
+<head>
+    <meta charset="utf-8" />
+    <title>Escape Game</title>
+    <!--  Object POO et modules  -->
+    <script src="src/Elements/Modules/CanvasModules.js" type="module" defer></script>
+    <script src="src/Elements/Modules/DomModules.js" type="module" defer></script>
+    <script src="src/Elements/Modules/ArrayModules.js" type="module" defer></script>
+    <script src="src/Elements/Utils/Timer.js" type="module" defer></script>
+    <script src="src/Elements/Controllers/EventController.js" type="module" defer></script>
+    <script src="src/Elements/Controllers/ImagesController.js" type="module" defer></script>
+    <script src="src/Elements/Controllers/CanvasController.js" type="module" defer></script>
+    <script src="src/Elements/Controllers/DomController.js" type="module" defer></script>
+    <script src="src/Elements/Abstract/GameEngine.js" type="module" defer></script>
+    <!--  Script javascript  -->
+    <script src="assets/js/elements.js" type="module" defer></script>
+    <script src="assets/js/navigation.js" type="module" defer></script>
+    <script src="assets/js/inventory.js" type="module" defer></script>
+    <script src="assets/js/room4/broom.js" defer></script>
+    <script src="assets/js/room4/inventoryCombination.js"></script>
+    <script src="assets/js/room4/doorOpening.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
         <link rel="stylesheet" href="room1.css">
-    </head>
-    <body>
-        <nav class="navbar">
-            <button id="prevBtn">◄ Précédent</button>
-            <menu class="inventory">
-                <button class="inventory-item item1"><i class="fas fa-glasses"></i></button>
-                <button class="inventory-item item2"><i class="fas fa-wand-magic"></i></button>
-                <button class="inventory-item item3"><i class="fas fa-sun"></i></button>
+</head>
+
+<body>
+    <nav class="navbar">
+        <button id="prevBtn">◄ Précédent</button>
+        <menu class="inventory">
+            <label for="item1" class="inventory-item item1">
+                <input type="checkbox" id="item1" class="hidden-checkbox">
+                <i class="fas fa-glasses"></i>
+            </label>
+
+            <label for="item2" class="inventory-item item2">
+                <input type="checkbox" id="item2" class="hidden-checkbox">
+                <i class="fas fa-wand-magic"></i>
+            </label>
+
+            <label for="item3" class="inventory-item item3">
+                <input type="checkbox" id="item3" class="hidden-checkbox">
+                <i class="fas fa-sun"></i>
+            </label>
                 <button id="btn_key" class="inventory-item item4"><i class="fa-solid fa-key"></i></button>
-            </menu>
-            <button id="nextBtn">Suivant ►</button>
-        </nav>
+        </menu>
+
+        <button id="nextBtn">Suivant ►</button>
+    </nav>
 
         <section id="dialog-room0" class="dialog-room0 room">
             <div id="dialog1" class="dialog1">
@@ -153,20 +187,27 @@
             <!-- <input type="image" src="key.png" alt=""> -->
 
 
-            <section id="room3" class="room">
-                <!-- Contenu de la salle de Franck -->
-                <button class="room-key" data-key="key3"><i class="fas fa-sun"></i></button>
-                <canvas id="gameRoom3" class="containerCanvas"></canvas>
+        <section id="room3" class="room">
+            <!-- Contenu de la salle de Franck -->
+            <button class="room-key" data-key="key3"><i class="fas fa-sun"></i></button>
+            <canvas id="gameRoom3" class="containerCanvas"></canvas>
                 <div id="menuRoom3" class="menu">
                     <h1 id="titleMenu">MORTY ISLAND</h1>
                     <p id="contentMenu">Voici le combat finale !!! </p>
                     <button id="startBtn">Start the Game</button>
                 </div>
-            </section>
-            
-        <section id="room4" class="room">
-            <!-- Contenu de la salle de Gaëtan -->
         </section>
+            
+    <section id="room4" class="room">
+        <!-- Contenu de la salle de Gaëtan -->
+        <img src="./assets/img/room4/blockDoor.png" class="doorRoom4">
+        <img src="./assets/img/room4/broom.png" alt="Balai de sorcier" id="broom" class="flying">
+        <a href="#room5"><img src="./assets/img/room4/broom.png" alt="Balai de sorcier" id="broomFixed"></a>
+
+    </section>
         <script src="assets/js/room2.js"  type="module"></script>
-    </body>
-    </html>
+    <section id="room5" class="room"></section>
+
+</body>
+    
+</html>
