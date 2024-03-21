@@ -1,5 +1,16 @@
 export class ArrayModules {
 
+    constructor() {
+
+    }
+
+    /**
+     * C
+     */
+    static constructor() {
+
+    }
+
     static verifyIsArrayModules(array) {
         return typeof array === "object" && array !== undefined && array !== null;
     }

@@ -28,7 +28,7 @@ export class DomController extends EventController {
     }
 
     setPosX(number) {
-        this.elements.style.left = number + 'px';
+        this.elements.style.left = number + window.scrollX + 'px';
         this.setPosElement(this.elements);
     }
     getPosY() {

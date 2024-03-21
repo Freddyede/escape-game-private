@@ -15,8 +15,8 @@ export class ImagesController {
     setImage(sources, x, y) {
         this.imgElement = new Image();
         this.imgElement.src = sources;
-        this.x = x;
-        this.y = y;
+        this.imgElement.x = x;
+        this.imgElement.y = y;
     }
     setWidth(width) {
         this.w = width;
@@ -43,8 +43,8 @@ export class ImagesController {
         return this.y;
     }
 
-    loaded(callBack) {
-        if(this.imgElements === undefined) {
+    loadedImage(callBack) {
+        if(this.imgElements !== undefined) {
             return this.imgElement.onload = () => {
                 callBack();
             };

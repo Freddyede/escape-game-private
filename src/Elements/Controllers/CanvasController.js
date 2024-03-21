@@ -1,6 +1,10 @@
 import { ImagesController } from "./ImagesController.js";
 import { CanvasModules } from "../Modules/CanvasModules.js";
 
+/**
+ * Récupération d'un canvas
+ * TODO call RatioImagesModules => En fonction de la position de l'image set la width et la height de l'image
+ */
 export class CanvasController {
     imagesController;
     canvas = null;
@@ -28,7 +32,7 @@ export class CanvasController {
         this.context = this.canvas.getContext(contextType);
     }
     draw() {
-        CanvasModules.drawImages(this.context, this.canvas, this.imagesController);
+        return CanvasModules.drawImages(this.context, this.canvas, this.getImagesController());
     }
     loop(callBack) {
         callBack();
