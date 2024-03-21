@@ -2,7 +2,7 @@ import { DomController } from "../Controllers/DomController.js";
 import { CanvasController } from "../Controllers/CanvasController.js";
 import { Timer } from "../Utils/Timer.js";
 
-export class GameEngine {
+export default class GameEngine {
     domController;
     canvasController;
     timer;
