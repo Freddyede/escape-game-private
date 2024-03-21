@@ -2,22 +2,18 @@
     margin: 0;
     padding: 0;
 }
-
+ 
 .room {
     width: 100vw;
     height: 100vh;
     font-size: 24px;
-}
-#room0 {
-    background-color: var(--background-room-0);
-}
+} 
+
 #room1 {
     background-color: var(--background-room-1);
 }
 
-#room2 {
-    background-color: var(--background-room-2);
-}
+
 
 #room3 {
     background-color: var(--background-room-3);

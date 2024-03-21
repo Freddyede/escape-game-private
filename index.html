@@ -9,10 +9,13 @@
         <script src="assets/js/elements.js" type="module" defer></script>
         <script src="assets/js/navigation.js" type="module" defer></script>
         <script src="assets/js/inventory.js" type="module" defer></script>
+        <script src="assets/js/dialog.js" type="module" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
         <link rel="stylesheet" href="assets/css/variables.css" />
         <link rel="stylesheet" href="assets/css/style.css" />
         <link rel="stylesheet" href="./assets/css/room2.css">
+        <link rel="stylesheet" href="./assets/css/style-room0.css">
+
     </head>
     <body>
         <nav class="navbar">
@@ -26,8 +29,22 @@
             <button id="nextBtn">Suivant ►</button>
         </nav>
 
-        <section id="room0" class="room">
-            <!-- Démarrage du jeu -->
+        <section id="dialog-room0" class="dialog-room0 room">
+            <div id="dialog1" class="dialog1">
+                <img id="img-dialog" class="img-dialog" src=""/>
+                <p id="p-dialog" class=""></p>
+            </div>
+            <audio id="sound-rick1" src="./assets/sound/room0/rick1.mp3"></audio>
+            <audio id="sound-morty1" src="./assets/sound/room0/morty1.mp3"></audio> 
+            <audio id="sound-rick2" src="./assets/sound/room0/rick2.mp3"></audio>
+            <audio id="sound-morty2" src="./assets/sound/room0/morty2.mp3"></audio>
+            <audio id="sound-rick3" src="./assets/sound/room0/rick3.mp3"></audio>
+            <audio id="sound-morty3" src="./assets/sound/room0/morty3.mp3"></audio>
+            <audio id="sound-rick4" src="./assets/sound/room0/rick4.mp3"></audio>
+            <audio id="sound-morty4" src="./assets/sound/room0/morty4.mp3"></audio>
+            <audio id="sound-rick5" src="./assets/sound/room0/rick5.mp3"></audio>
+            <audio id="sound-morty5" src="./assets/sound/room0/morty5.mp3"></audio>
+            <audio id="sound-rick6" src="./assets/sound/room0/rick6.mp3"></audio>
         </section>
         
         <section id="room1" class="room">
@@ -35,8 +52,8 @@
             <button class="room-key" data-key="key1"><i class="fas fa-wand-magic"></i></button>
         </section>
         
-        <section id="room2" class="room">
-            <!-- Contenu de la salle de Sonia -->
+        <section id="room2" class="room">  
+            
             <div class="main">
                 <div class="room-02" id="room-02">
                     <img id="serrure" class="serrure" src="./assets/images/room2/Serrure2.png" />
@@ -57,7 +74,7 @@
                     <div id="room2Dialog">
                         <div id="roomBoxDialog">
                           <h3 id="dialogH3">Dialog Title</h3>
-                          <p id="dialogP">This is a dialog box. You can put any content here.</p>
+                          <p id="dialogP"></p>
                           <div class="divBtnClose">
                             <button id="closeDialog">Fermer</button>
                           </div>
