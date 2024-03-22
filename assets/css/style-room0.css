@@ -1,10 +1,12 @@
 .dialog-room0{
-    height: 100vh;
     background-image: url("../images/room0/font-ricky.png");
+    top: 0;
+    z-index: 200;
+    position: absolute;
     width: 100vw;
+    height: 92.9%;
     background-size: 100%, auto;
     background-repeat: no-repeat;
-    background-size: 100% 100vh;
     background-attachment: fixed;
     display: flex;
     justify-content: center; 
@@ -21,7 +23,6 @@
     background-image: url("../images/room0/back2.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    opacity: 0,3;
     flex-direction: row;
     justify-content: space-around;
     
@@ -54,7 +55,6 @@ left: 12%;}
     height: 2em;
     width: 35%;
     text-align: center;
-    border: 0px;
     background-color: black;
     color: #fff;
     font-size: x-large;

@@ -23,7 +23,7 @@ class GameEngine {
     speed = 5
 
     constructor() {
-        this.canvas = document.getElementById('game')
+        this.canvas = document.getElementById('gameRoom3')
         this.ctx = this.canvas.getContext('2d')
         this.canvas.width = 840
         this.canvas.height = 650
@@ -34,6 +34,12 @@ class GameEngine {
     init() {
         this.initEvent()
         this.items = [
+            new Drawable( 300, 500, 'assets/img/police_car.png'),
+            new PoliceCar( 200, 800),
+            new Drawable(  200, 600, 'assets/img/police_car.png'),
+            new PoliceCar(  400, 550),
+            new Drawable(350, 850, 'assets/img/police_car.png'),
+            new PoliceCar(  220, 550),
             new Drawable( 300, 500, 'assets/img/police_car.png'),
             new PoliceCar( 200, 800),
             new Drawable(  200, 600, 'assets/img/police_car.png'),
@@ -125,7 +131,7 @@ class GameEngine {
         for (let item of this.items)
         {
             if (collision(this.player, item)) {
-                return true
+                return true;
             }
             item.y -= 1
         }
@@ -135,6 +141,11 @@ class GameEngine {
     collisionBorder() {
         if (this.player.x < 0) {
             this.player.x = 0
+        }
+        for (const item of this.items) {
+            if(item.y <= 0) {
+                item.y = this.canvas.height;
+            }
         }
         if (this.player.y < 0) {
             this.player.y= 0
@@ -200,7 +211,9 @@ class GameEngine {
         document.getElementById('titleMenu').innerText = 'GAME OVER';
         document.getElementById('contentMenu').innerText = 'Vous avez gagné !!!';
         document.getElementById('startBtn').innerText = 'Restart the Game';
-        document.getElementById('menu').style = 'display: flex';
+        document.getElementById('gameRoom3').classList.add('hide');
+        document.querySelector('#room3').style.zIndex = 200;
+        document.getElementById('menuRoom3').classList.add('hide');
     }
 }
 

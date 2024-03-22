@@ -18,9 +18,9 @@
 #room3 {
     position: absolute;
     top:0;
-    overflow: hidden;
     width: 100vw;
     height: 92.9%;
+    background-color: var(--background-room-3);
 }
 
 #room4 {
