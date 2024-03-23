@@ -43,6 +43,7 @@ coffre1.addEventListener("click", function () {
 parchemin.addEventListener("click", function () {
     chargeArrayKey(document.querySelector('#parchemin'));
     isParchemin = true;
+    document.querySelector('#parchemin').style.visibility = 'hidden';
 });
 
 
