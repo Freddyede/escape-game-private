@@ -34,7 +34,14 @@
 
 #room4 {
     background-size: cover;
+    position: absolute;
+    z-index: 1000;
     background: url(/assets/img/room4/fondDonjon.png) no-repeat center;
+}
+
+#room5{
+    position: absolute;
+    z-index: 500;
 }
 
 .room button[data-key="key1"] {

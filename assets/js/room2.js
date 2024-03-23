@@ -71,17 +71,17 @@ serrure.addEventListener("click", function () {
 
 
 armoire.addEventListener("click", function () {
-    detracor.style.visibility = "visible" ;
-    detracor.style.animation = "avancerEtGrandir 6s ease-in-out forwards"
+    sound_game_over.play();
+    detracor.style.visibility = "visible";
+    detracor.style.animation = "avancerEtGrandir 6s ease-in-out forwards";
     armoire.style.visibility = "hidden";
     safe.style.visibility = "hidden";
-    sound_game_over.play()
-    
+
     setTimeout(() => {
-        detracor.style.visibility = "hidden"
-        game_over.style.visibility = "visible"
-        btn_restart.style.visibility = "visible"
-      }, "2000");
+        detracor.style.visibility = "hidden";
+        game_over.style.visibility = "visible";
+        btn_restart.style.visibility = "visible";
+      }, 2000);
 });
 
 
@@ -90,15 +90,16 @@ btn_restart.addEventListener("click", function () {
     isKey = false
     game_over.style.visibility = "hidden"
     armoire.style.visibility = "visible";
-    btn_restart.style.visibility = "hidden"
+    btn_restart.style.visibility = "hidden";
     sound_game_over.pause()
-    btn_key.style.visibility = "hidden"
+    btn_key.style.visibility = "hidden";
     coffre1.style.visibility = "visible";
     coffre2.style.visibility = "hidden";
     parchemin.style.visibility = "hidden";
     key.style.visibility = "visible";
-    item2.style.display = "none"
+    item2.style.display = "none";
     safe.style.visibility = "visible";
+    window.location.reload();
 });
 
 
