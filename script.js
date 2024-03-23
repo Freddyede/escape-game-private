@@ -57,12 +57,6 @@ door2.addEventListener('click', () => chooseDoor('right'));
   
     // Obtenir la ligne et la scène
     const line = document.querySelector('.line');
-    const scene = document.querySelector('#room1');
-  
-    // Modifier la perspective en fonction de la position de la souris
-    if (scene) {
-        scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-    }
   
     // Appliquer une animation à la ligne pour qu'elle s'étire et monte le mur
     if (line) {
@@ -71,14 +65,3 @@ door2.addEventListener('click', () => chooseDoor('right'));
         line.style.transform = `translateZ(-${posX}px) scaleX(${scaleX}) scaleY(${scaleY})`;
     }
   });
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-  
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
-  
-    const scene = document.querySelector('#room1');
-    scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-  });
-  
