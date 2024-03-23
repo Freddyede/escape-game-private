@@ -212,6 +212,7 @@ class GameEngine {
         document.getElementById('contentMenu').innerText = 'Vous avez gagné !!!';
         document.getElementById('startBtn').innerText = 'Restart the Game';
         document.getElementById('gameRoom3').classList.add('hide');
+        document.getElementById('gameRoom3 button').classList.remove('hide');
         document.querySelector('#room3').style.zIndex = 200;
         document.getElementById('menuRoom3').classList.add('hide');
     }

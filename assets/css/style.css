@@ -13,15 +13,14 @@
 #room3 {
     position: absolute;
     top:0;
+    background-color: var(--background-room-3);
     width: 100vw;
     height: 92.9%;
 }
 
 #room4 {
-  background: url(/assets/img/room4/fondDonjon.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background: url(/assets/img/room4/fondDonjon.png) no-repeat center;
 }
 
 .room button[data-key="key1"] {
@@ -125,7 +124,6 @@ canvas {
     background-size: cover;
     width: 100%;
     height: 100%;
-    z-index: 400;
     animation: road 5s linear infinite;
 }
 
@@ -139,8 +137,6 @@ canvas {
     align-items: center;
     flex-direction: column;
     left: 0;
-    border: 1px solid red;
-    z-index: 400;
     background-image: url("https://w0.peakpx.com/wallpaper/413/615/HD-wallpaper-tv-show-rick-and-morty-breaking-bad-morty-smith-rick-sanchez.jpg");
     background-repeat: no-repeat;
     background-size: cover;
