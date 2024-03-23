@@ -1,4 +1,5 @@
-//import { dialog } from './room2-module.js';
+import {chargeArrayKey} from "./inventory.js";
+
 document.addEventListener("DOMContentLoaded", function () {
 const coffre1 = document.getElementById("coffre1");
 const coffre2 = document.getElementById("coffre2");
@@ -28,7 +29,7 @@ let isKey = false
 coffre1.addEventListener("click", function () {
     const key = prompt("Veuiller saisir le code svp! ")
 
-    if(key == 687){
+    if(parseInt(key) === 687){
         coffre1.style.visibility = "hidden";
         coffre2.style.visibility = "visible";
         parchemin.style.visibility = "visible";
@@ -50,7 +51,7 @@ key.addEventListener("click", function () {
         dialog('flex', "Parchemin abscent !", "Veuillez recuperer le parchemin avant svp!")
      }else {
         key.style.visibility = "hidden";
-        btn_key.style.display = "inline-block"
+        chargeArrayKey(document.querySelector('#key'));
         isKey = true
      } 
 });
@@ -61,11 +62,10 @@ serrure.addEventListener("click", function () {
        dialog('flex', "Parchemin abscent !", "Veuillez recuperer le parchemin avant svp!")
      }else if(!isKey){
         dialog('flex', "La cle est abscente !", "Veuillez recuperer la cle avant svp!")
-         
+
      }else {
-         sound_success.play()
+         sound_success.play();
          success.style.visibility = "visible";
-         btn_key.style.display = "none"
      }
 });
 
@@ -111,7 +111,7 @@ closeDialog.addEventListener("click", function () {
 function dialog(display, textH3, textP) {
     room2dialog.style.display = display;
 
-    if(display != "none"){
+    if(display !== "none"){
         dialogH3.textContent = textH3
         dialogP.textContent = textP
     }

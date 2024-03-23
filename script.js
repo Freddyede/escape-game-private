@@ -1,3 +1,5 @@
+import {chargeArrayKey} from "./assets/js/inventory.js";
+
 console.log('Room1 script loaded');
 
 let timeLeft = 30;
@@ -35,7 +37,10 @@ function chooseDoor(choice) {
         clearInterval(timerInterval);
         if (isWinner) {
             resultElement.textContent = 'Vous avez traversé le labyrinthe avec succès !';
-            document.querySelector('button[data-key="key2"]').classList.remove('hide');
+            document.querySelector('button[data-key="key1"]').classList.remove('hide');
+            document.querySelector('button[data-key="key1"]').addEventListener('click', () => {
+                chargeArrayKey(document.querySelector('button[data-key="key1"]'));
+            });
         } else {
             resultElement.textContent = 'Mauvaise porte... Jeu terminé !';
         }

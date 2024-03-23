@@ -58,21 +58,18 @@
     <nav class="navbar">
         <button id="prevBtn">◄ Précédent</button>
         <menu class="inventory">
-            <label for="item1" class="inventory-item item1">
-                <input type="checkbox" id="item1" class="hidden-checkbox">
-                <i class="fas fa-glasses"></i>
-            </label>
-
-            <label for="item2" class="inventory-item item2">
-                <input type="checkbox" id="item2" class="hidden-checkbox">
+            <label for="item1" class="inventory-item item1 hide" data-target="1">
+                <input type="checkbox" id="item1" class="hidden-checkbox" />
                 <i class="fas fa-wand-magic"></i>
             </label>
-
-            <label for="item3" class="inventory-item item3">
-                <input type="checkbox" id="item3" class="hidden-checkbox">
+            <label for="item2" class="inventory-item item2 hide" data-target="2">
+                <input type="checkbox" id="item2" class="hidden-checkbox" />
+                <i class="fa-solid fa-key"></i>
+            </label>
+            <label for="item3" class="inventory-item item3 hide" data-target="3">
+                <input type="checkbox" id="item3" class="hidden-checkbox" />
                 <i class="fas fa-sun"></i>
             </label>
-                <button id="btn_key" class="inventory-item item4"><i class="fa-solid fa-key"></i></button>
         </menu>
 
         <button id="nextBtn">Suivant ►</button>
@@ -113,7 +110,7 @@
             </div>
             <div id="timer"><span>30</span> secondes restantes</div>
             <div id="result"></div>
-            <button class="room-key hide" data-key="key2"><i class="fas fa-wand-magic"></i></button>
+            <button class="room-key hide" data-key="key1"><i class="fas fa-wand-magic"></i></button>
         </section>
         
         <section id="room2" class="room">  
@@ -121,7 +118,7 @@
             <div class="main">
                 <div class="room-02" id="room-02">
                     <img id="serrure" class="serrure" src="./assets/images/room2/Serrure2.png"  alt=""/>
-                    <img id = "key" class="key" data-key="key3" src="./assets/images/room2/key.png" alt=""/>
+                    <img id = "key" class="key" data-key="key2" src="./assets/images/room2/key.png" alt=""/>
                     <img id="coffre1" class="coffre1" src="./assets/images/room2/coffre.png"  alt=""/>
                     <img id="coffre2" class="coffre2" src="./assets/images/room2/coffre2.png" alt=""/>
                     <img id="parchemin" class="parchemin" data-key="key2" src="./assets/images/room2/parchemin.png"  alt=""/>

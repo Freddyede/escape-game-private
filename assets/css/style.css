@@ -71,9 +71,6 @@
   width: var(--thirteen-percent);
   justify-content: space-evenly;
 }
-.inventory-item {
-  display: none;
-}
 
 .hidden-checkbox {
   position: absolute;
@@ -101,6 +98,19 @@
   height: 5vh;
   margin: 10px;
   cursor: pointer;
+}
+
+.navbar label i {
+    border: 1px solid #4F4F4F;
+    width: 175px;
+    background-color: #E5E5E5;
+    color: #000000;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    margin: 10px;
 }
 
 #broom {
