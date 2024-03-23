@@ -26,13 +26,10 @@ function chooseDoor(choice) {
     function gameOver(isWinner) {
         if (isWinner) {
             resultElement.textContent = 'Vous avez traversé le labyrinthe avec succès !';
-            document.querySelector('button[data-key="key1"]').classList.remove('hide');
-            document.querySelector('button[data-key="key1"]').addEventListener('click', () => {
-                chargeArrayKey(document.querySelector('button[data-key="key1"]'));
-            });
+            chargeArrayKey(document.querySelector('button[data-key="key1"]'));
         } else {
             resultElement.textContent = 'Mauvaise porte... Jeu terminé !';
-            setInterval(() => window.location.reload(), 1000);
+            setTimeout(() => window.location.reload(), 1000);
         }
         door1.disabled = true;
         door2.disabled = true;
