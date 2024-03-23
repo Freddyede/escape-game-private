@@ -1,7 +1,7 @@
 .dialog-room0{
     background-image: url("../images/room0/font-ricky.png");
     top: 0;
-    z-index: 200;
+    z-index: 3000;
     position: absolute;
     width: 100vw;
     height: 92.9%;

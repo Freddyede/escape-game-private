@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const key1 = document.querySelector('[data-key="key1"]');
-    const key2 = document.querySelector('[data-key="key2"]');
-    const key3 = document.querySelector('[data-key="key3"]');
-    const key4 = document.querySelector('[data-key="key4"]');
+    const key1 = document.querySelector('button [data-key="key1"]');
+    const key2 = document.querySelector('button [data-key="key2"]');
+    const key3 = document.querySelector('button [data-key="key3"]');
+    const key4 = document.querySelector('button [data-key="key4"]');
 
 
     const item1 = document.querySelector(".inventory-item.item1");

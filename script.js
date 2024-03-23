@@ -35,6 +35,7 @@ function chooseDoor(choice) {
         clearInterval(timerInterval);
         if (isWinner) {
             resultElement.textContent = 'Vous avez traversé le labyrinthe avec succès !';
+            document.querySelector('button[data-key="key2"]').classList.remove('hide');
         } else {
             resultElement.textContent = 'Mauvaise porte... Jeu terminé !';
         }
@@ -53,7 +54,7 @@ document.addEventListener('mousemove', (e) => {
     const posX = (clientX / innerWidth) * 100;
     const posY = (clientY / innerHeight) * 100;
   
-    const scene = document.querySelector('.scene');
+    const scene = document.querySelector('#room1');
     if (scene) {
       scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
     }
@@ -66,7 +67,7 @@ document.addEventListener('mousemove', (e) => {
     const posX = (clientX / innerWidth) * 100;
     const posY = (clientY / innerHeight) * 100;
   
-    const scene = document.querySelector('.scene');
+    const scene = document.querySelector('#room1');
     if (scene) {
       scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
     }
@@ -78,7 +79,7 @@ document.addEventListener('mousemove', (e) => {
     const posX = (clientX / innerWidth) * 100;
     const posY = (clientY / innerHeight) * 100;
   
-    const scene = document.querySelector('.scene');
+    const scene = document.querySelector('#room1');
     if (scene) {
         scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
     }
@@ -91,7 +92,7 @@ document.addEventListener('mousemove', (e) => {
   
     // Obtenir la ligne et la scène
     const line = document.querySelector('.line');
-    const scene = document.querySelector('.scene');
+    const scene = document.querySelector('#room1');
   
     // Modifier la perspective en fonction de la position de la souris
     if (scene) {
@@ -112,7 +113,7 @@ document.addEventListener('mousemove', (e) => {
     const posX = (clientX / innerWidth) * 100;
     const posY = (clientY / innerHeight) * 100;
   
-    const scene = document.querySelector('.scene');
+    const scene = document.querySelector('#room1');
     scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
   });
   

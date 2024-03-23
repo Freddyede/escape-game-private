@@ -1,7 +1,9 @@
 .scene {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    z-index: 2000;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
     perspective: 1000px;
     perspective-origin: 50% 50%;
 }
@@ -29,6 +31,7 @@
 
 #timer, #result {
     position: absolute;
+    z-index: 2200;
     color: white;
 }
 
@@ -44,11 +47,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2em;
-}
-
-
-button:hover {
-    background-color: #00cc00;
 }
 
 #door1 {
@@ -97,7 +95,7 @@ button:hover {
     transparent 100%
   );
   background-repeat: no-repeat;
-  animation: scan 10.s linear 0s infinite;
+  animation: scan 10s linear 0s infinite;
 }
 
 @keyframes scan {
