@@ -180,11 +180,7 @@ class GameEngine {
         this.update()
         this.draw()
         window.requestAnimationFrame(() => {
-            if(!this.collisionItem()){
-                this.gameLoop()
-            } else {
-                window.location.reload();
-            }
+            this.gameLoop()
         })
     }
 
