@@ -6,19 +6,9 @@ let timeLeft = 30;
 let currentRoom = 1;
 const winningSequence = ['left', 'right', 'right', 'left'];
 
-const timerElement = document.getElementById('timer').querySelector('span');
 const resultElement = document.getElementById('result');
 const door1 = document.getElementById('door1');
 const door2 = document.getElementById('door2');
-
-function updateTimer() {
-    timerElement.textContent = timeLeft;
-    if (timeLeft === 0) {
-        clearInterval(timerInterval);
-        gameOver(false);
-    }
-    timeLeft--;
-}
 
 function chooseDoor(choice) {
     if (winningSequence[currentRoom - 1] === choice) {
@@ -34,7 +24,6 @@ function chooseDoor(choice) {
 }
 
     function gameOver(isWinner) {
-        clearInterval(timerInterval);
         if (isWinner) {
             resultElement.textContent = 'Vous avez traversé le labyrinthe avec succès !';
             document.querySelector('button[data-key="key1"]').classList.remove('hide');
@@ -51,8 +40,6 @@ function chooseDoor(choice) {
 
 door1.addEventListener('click', () => chooseDoor('left'));
 door2.addEventListener('click', () => chooseDoor('right'));
-
-const timerInterval = setInterval(updateTimer, 1000);
 document.addEventListener('mousemove', (e) => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
