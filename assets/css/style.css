@@ -4,25 +4,16 @@
 }
  
 .room {
-  width: 100vw;
-  height: 100vh;
-  font-size: 24px;
-  position: relative;
-}
+    width: 100vw;
+    height: 100vh;
+    font-size: 24px;
+    z-index: 1000;
+} 
 
 #room1 {
-    position: absolute;
-    z-index: 2500;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    perspective: 1000px;
-    perspective-origin: 50% 50%;
+    background-color: var(--background-room-1);
 }
-#room2 {
-    position: absolute;
-    z-index: 2000;
-}
+
 #room3 {
     position: absolute;
     top:0;

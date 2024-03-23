@@ -66,7 +66,7 @@ pDialog.addEventListener("click", function () {
 
 const dialog0 = () => {
     imgDialog.src = `assets/images/room0/rick0.jpeg`
-    pDialog.textContent = "Lancer la discussion"
+    pDialog.textContent = "Let's start the game"
     pDialog.classList.add("btnStart")
     
 }
