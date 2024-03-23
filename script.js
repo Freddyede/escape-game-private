@@ -15,7 +15,7 @@ function chooseDoor(choice) {
         if (currentRoom === winningSequence.length) {
             gameOver(true);
         } else {
-            resultElement.textContent = `Bonne porte ! Avancez à la pièce ${++currentRoom}...`;
+            resultElement.textContent = `Bonne porte ! Avancez à la pièce ${ ++currentRoom }...`;
             timeLeft = 30;
         }
     } else {
@@ -37,41 +37,16 @@ function chooseDoor(choice) {
 
 door1.addEventListener('click', () => chooseDoor('left'));
 door2.addEventListener('click', () => chooseDoor('right'));
-document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
   
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
+  document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+  
+    const posX = (clientX / window.innerWidth) * 100;
+    const posY = (clientY / window.innerHeight) * 100;
   
     const scene = document.querySelector('#room1');
     if (scene) {
       scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-    }
-  });
-  
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-  
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
-  
-    const scene = document.querySelector('#room1');
-    if (scene) {
-      scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-    }
-  });
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-  
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
-  
-    const scene = document.querySelector('#room1');
-    if (scene) {
-        scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
     }
   });
   
