@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-const imgDialog = document.getElementById("img-dialog")
-const pDialog = document.getElementById("p-dialog")
+let soundState = true;
 const soundRick1 = document.getElementById("sound-rick1")
 const soundMorty1 = document.getElementById("sound-morty1")
 const soundRick2 = document.getElementById("sound-rick2")
@@ -12,6 +10,10 @@ const soundMorty4 = document.getElementById("sound-morty4")
 const soundRick5 = document.getElementById("sound-rick5")
 const soundMorty5 = document.getElementById("sound-morty5")
 const soundRick6 = document.getElementById("sound-rick6")
+document.addEventListener("DOMContentLoaded", function () {
+const imgDialog = document.getElementById("img-dialog")
+const pDialog = document.getElementById("p-dialog")
+
 
 
 
@@ -22,43 +24,43 @@ pDialog.addEventListener("click", function () {
     dialog1();
 
     setTimeout(() => {        
-        dialog2();
+       soundState && dialog2();
     }, 21000);
 
     setTimeout(() => {        
-        dialog3();
+        soundState &&dialog3();
     }, 23000);
 
     setTimeout(() => {        
-        dialog4();
+       soundState && dialog4();
     }, 46000);
 
     setTimeout(() => {        
-        dialog5();
+        soundState &&dialog5();
     }, 49000);
 
     setTimeout(() => {        
-        dialog6();
+       soundState && dialog6();
     }, 61000);
 
     setTimeout(() => {        
-        dialog7();
+       soundState && dialog7();
     }, 63000);
 
     setTimeout(() => {        
-        dialog8();
+        soundState &&dialog8();
     }, 74000);
 
     setTimeout(() => {        
-        dialog9();
+        soundState &&dialog9();
     }, 78000);
 
     setTimeout(() => {        
-        dialog10();
+        soundState &&dialog10();
     }, 98000);
 
     setTimeout(() => {        
-        dialog11();
+       soundState && dialog11();
     }, 102000);
   
      
@@ -121,4 +123,21 @@ const dialog = (src, text, audio) => {
     audio.play()
 }
 
+
+
 });
+
+export function stopeSoudRoom0(event) {
+    soundState = event
+    soundRick1.pause()
+    soundMorty1.pause()
+    soundRick2.pause()
+    soundMorty2.pause()
+    soundRick3.pause()
+    soundMorty3.pause()
+    soundRick4.pause()
+    soundMorty4.pause()
+    soundRick5.pause()
+    soundMorty5.pause()
+    soundRick6.pause()
+ }
