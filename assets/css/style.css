@@ -94,7 +94,7 @@
 }
 
 .navbar button {
-  width: var(--thirteen-percent);
+  width: 18%;
   height: 5vh;
   margin: 10px;
   cursor: pointer;

@@ -5,6 +5,7 @@ const coffre1 = document.getElementById("coffre1");
 const coffre2 = document.getElementById("coffre2");
 const parchemin = document.getElementById("parchemin");
 const item2 = document.querySelector(".inventory-item.item2");
+const item1 = document.querySelector(".inventory-item.item1");
 const key = document.getElementById("key");
 const serrure = document.getElementById("serrure");
 const detracor = document.getElementById("detracor");
@@ -53,6 +54,7 @@ key.addEventListener("click", function () {
         dialog('flex', "Parchemin abscent !", "Veuillez recuperer le parchemin avant svp!")
      }else {
         key.style.visibility = "hidden";
+        chargeArrayKey(document.querySelector('#key'));
         isKey = true
      } 
 });
