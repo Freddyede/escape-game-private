@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
         <title>Escape Game</title>
         <script src="assets/js/navigation.js" type="module" defer></script>
         <script src="assets/js/inventory.js" type="module" defer></script>
+        <script src="src/Rooms/3/GameEngine.js" type="module" defer></script>
         <script src="assets/js/rooms/room3.js" type="module" defer></script>
         <script src="assets/js/dialog.js" type="module" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -13,15 +13,8 @@
         <link rel="stylesheet" href="./assets/css/room2.css" />
         <link rel="stylesheet" href="./assets/css/style-room0.css" />
         <!--  Object POO et modules  -->
-        <script src="src/Elements/Modules/CanvasModules.js" type="module" defer></script>
         <!-- <script src="src/Elements/Modules/DomModules.js" type="module" defer></script> -->
         <!-- <script src="src/Elements/Modules/ArrayModules.js" type="module" defer></script> -->
-        <script src="src/Elements/Utils/Timer.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/EventController.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/ImagesController.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/CanvasController.js" type="module" defer></script>
-        <script src="src/Elements/Controllers/DomController.js" type="module" defer></script>
-        <script src="src/Elements/Abstract/GameEngine.js" type="module" defer></script>
         <!--  Script javascript  -->
         <script src="assets/js/navigation.js" type="module" defer></script>
         <script src="assets/js/inventory.js" type="module" defer></script>
@@ -32,15 +25,6 @@
     <meta charset="utf-8" />
     <title>Escape Game</title>
     <!--  Object POO et modules  -->
-    <script src="src/Elements/Modules/CanvasModules.js" type="module" defer></script>
-    <script src="src/Elements/Modules/DomModules.js" type="module" defer></script>
-    <script src="src/Elements/Modules/ArrayModules.js" type="module" defer></script>
-    <script src="src/Elements/Utils/Timer.js" type="module" defer></script>
-    <script src="src/Elements/Controllers/EventController.js" type="module" defer></script>
-    <script src="src/Elements/Controllers/ImagesController.js" type="module" defer></script>
-    <script src="src/Elements/Controllers/CanvasController.js" type="module" defer></script>
-    <script src="src/Elements/Controllers/DomController.js" type="module" defer></script>
-    <script src="src/Elements/Abstract/GameEngine.js" type="module" defer></script>
     <!--  Script javascript  -->
     <script src="assets/js/navigation.js" type="module" defer></script>
     <script src="assets/js/inventory.js" type="module" defer></script>
@@ -100,12 +84,12 @@
             <div class="wall" id="right-wall"></div>
             <div class="corridor" id="corridor-left">
                 <div class="door" id="door1">
-                    <button data-doors="left">Mourir</button>
+                    <button>Mourir</button>
                 </div>
             </div>
             <div class="corridor" id="corridor-right">
                 <div class="door" id="door2">
-                    <button data-doors="right">Vivre</button>
+                    <button>Vivre</button>
                 </div>
             </div>
             <div id="result"></div>
@@ -117,7 +101,7 @@
             <div class="main">
                 <div class="room-02" id="room-02">
                     <img id="serrure" class="serrure" src="./assets/images/room2/Serrure2.png"  alt=""/>
-                    <img id = "key" class="key" data-key="key2" src="./assets/images/room2/key.png" alt=""/>
+                    <img id = "key" class="key" src="./assets/images/room2/key.png" alt=""/>
                     <img id="coffre1" class="coffre1" src="./assets/images/room2/coffre.png"  alt=""/>
                     <img id="coffre2" class="coffre2" src="./assets/images/room2/coffre2.png" alt=""/>
                     <img id="parchemin" class="parchemin" data-key="key2" src="./assets/images/room2/parchemin.png"  alt=""/>
@@ -164,9 +148,18 @@
         <a href="#room5"><img src="./assets/img/room4/broom.png" alt="Balai de sorcier" id="broomFixed"></a>
 
     </section>
-        <script src="assets/js/room2.js"  type="module"></script>
-    <section id="room5" class="room"></section>
-
+    <section id="room" class="room">
+        <!-- Contenu de la salle de Gaëtan -->
+        <img src="./assets/img/room4/blockDoor.png" class="doorRoom4" alt="blockDoor" />
+        <img src="./assets/img/room4/broom.png" alt="Balai de sorcier" id="broom" class="flying" />
+        <a href="#room5"><img src="./assets/img/room4/broom.png" alt="Balai de sorcier" id="broomFixed"></a>
+    </section>
+      
+    <section id="end-game" class="room end-game">
+            <div class="end-game-contenu">
+                <img src="./assets/img/image de fin.jpg" alt="Fin du jeu" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </section> 
 </body>
     
 </html>
