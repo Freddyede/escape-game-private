@@ -1,67 +1,69 @@
 import {chargeArrayKey} from "./assets/js/inventory.js";
 
-console.log('Room1 script loaded');
-
-let timeLeft = 30;
-let currentRoom = 1;
-const winningSequence = ['left', 'right', 'right', 'left'];
-
-const resultElement = document.getElementById('result');
-const door1 = document.getElementById('door1');
-const door2 = document.getElementById('door2');
-
-function chooseDoor(choice) {
-    if (winningSequence[currentRoom - 1] === choice) {
-        if (currentRoom === winningSequence.length) {
-            gameOver(true);
-        } else {
-            resultElement.textContent = `Bonne porte ! Avancez à la pièce ${ ++currentRoom }...`;
-            timeLeft = 30;
+class RoomGame {
+    constructor(roomElement) {
+        this.roomElement = roomElement;
+        this.playerChoices = [];
+        this.winningSequence = ['left', 'right', 'right', 'left']; // correspond au tableau des rooms [l,r,r,l] === []
+        this.buttonDoors = [
+            this.roomElement.querySelector('#door1 button'),
+            this.roomElement.querySelector('#door2 button')
+        ];
+        this.resultElement = document.querySelector('#result');
+        this.initGame();
+    }
+    initGame() {
+        console.log('Initialisation du jeu...');// [{}] [1, 2, 3] => 1, 2, 3 => HTML
+        for (let i = 0; i < this.buttonDoors.length; i++) {
+            this.buttonDoors[i].addEventListener(
+                'click',
+                () => this.chooseDoor(this.buttonDoors[i].getAttribute('data-doors'))
+            );
         }
-    } else {
-        gameOver(false);
+        this.roomElement.addEventListener('mousemove', e => this.adjustPerspective(e))
+    }
+    chooseDoor(choice) {
+        if(this.playerChoices.length <= 3) {
+            this.playerChoices.push(choice);
+            const copyPlayer = this.playerChoices;
+            let count = 0;
+            for (let i = 0; i < this.playerChoices.length; i++) {
+                count = i+1;
+            }
+            if(copyPlayer.length === this.winningSequence.length) {
+                for (let i = 0; i < copyPlayer.length; i++) {
+                    if(copyPlayer[i] === this.winningSequence[i]){
+                        this.#winningGame();
+                    } else {
+                        this.#gameOver();
+                    }
+                }
+                for (let i = 0; i < this.buttonDoors.length; i++) {
+                    this.buttonDoors[i].removeEventListener('click', () => this.chooseDoor(this.buttonDoors[i].getAttribute('data-doors')));
+                }
+            } else {
+                this.resultElement.textContent = `Bon choix Veuillez avancer à la porte ${count}`;
+            }
+        }
+    }
+
+    #winningGame() {
+        this.resultElement.textContent = null;
+        this.resultElement.textContent = 'Bien jouer vous avez finis le labyrinth';
+        return chargeArrayKey(this.roomElement.querySelector('.room-key[data-key="key1"]'));
+    }
+    #gameOver() {
+        this.resultElement.innerHTML = 'Mauvaise séquence... Jeu terminé !';
+        setTimeout(() =>this.roomElement.style.zIndex = 0, 2000);
+        setTimeout(() => window.location.reload(), 2001);
+    }
+
+    adjustPerspective(e) {
+        const rect = this.roomElement.getBoundingClientRect();
+        const posX = ((e.clientX - rect.left) / rect.width) * 100;
+        const posY = ((e.clientY - rect.top) / rect.height) * 100;
+        this.roomElement.style.perspectiveOrigin = `${posX}% ${posY}%`;
     }
 }
 
-    function gameOver(isWinner) {
-        if (isWinner) {
-            resultElement.textContent = 'Vous avez traversé le labyrinthe avec succès !';
-            chargeArrayKey(document.querySelector('button[data-key="key1"]'));
-        } else {
-            resultElement.textContent = 'Mauvaise porte... Jeu terminé !';
-            setTimeout(() => window.location.reload(), 1000);
-        }
-        door1.disabled = true;
-        door2.disabled = true;
-    }
-
-door1.addEventListener('click', () => chooseDoor('left'));
-door2.addEventListener('click', () => chooseDoor('right'));
-  
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-  
-    const posX = (clientX / window.innerWidth) * 100;
-    const posY = (clientY / window.innerHeight) * 100;
-  
-    const scene = document.querySelector('#room1');
-    if (scene) {
-      scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-    }
-  });
-  
-  document.addEventListener('mousemove', (e) => {
-    // Calculer la position de la souris en pourcentage
-    const posX = (e.clientX / window.innerWidth) * 100;
-    const posY = (e.clientY / window.innerHeight) * 100;
-  
-    // Obtenir la ligne et la scène
-    const line = document.querySelector('.line');
-  
-    // Appliquer une animation à la ligne pour qu'elle s'étire et monte le mur
-    if (line) {
-        const scaleX = posX / 100; // La longueur de la ligne sera basée sur la position X de la souris
-        const scaleY = posY > 50 ? (posY - 50) / 50 : 0; // Monter le mur seulement si la souris est dans la partie supérieure
-        line.style.transform = `translateZ(-${posX}px) scaleX(${scaleX}) scaleY(${scaleY})`;
-    }
-  });
+new RoomGame(document.querySelector('#room1'));
