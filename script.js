@@ -15,7 +15,7 @@ function chooseDoor(choice) {
         if (currentRoom === winningSequence.length) {
             gameOver(true);
         } else {
-            resultElement.textContent = `Bonne porte ! Avancez à la pièce ${++currentRoom}...`;
+            resultElement.textContent = `Bonne porte ! Avancez à la pièce ${ ++currentRoom }...`;
             timeLeft = 30;
         }
     } else {
@@ -26,13 +26,10 @@ function chooseDoor(choice) {
     function gameOver(isWinner) {
         if (isWinner) {
             resultElement.textContent = 'Vous avez traversé le labyrinthe avec succès !';
-            document.querySelector('button[data-key="key1"]').classList.remove('hide');
-            document.querySelector('button[data-key="key1"]').addEventListener('click', () => {
-                chargeArrayKey(document.querySelector('button[data-key="key1"]'));
-            });
+            chargeArrayKey(document.querySelector('button[data-key="key1"]'));
         } else {
             resultElement.textContent = 'Mauvaise porte... Jeu terminé !';
-           // setInterval(() => window.location.reload(), 1000);
+            setTimeout(() => window.location.reload(), 1000);
         }
         door1.disabled = true;
         door2.disabled = true;
@@ -40,41 +37,16 @@ function chooseDoor(choice) {
 
 door1.addEventListener('click', () => chooseDoor('left'));
 door2.addEventListener('click', () => chooseDoor('right'));
-document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
   
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
+  document.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+  
+    const posX = (clientX / window.innerWidth) * 100;
+    const posY = (clientY / window.innerHeight) * 100;
   
     const scene = document.querySelector('#room1');
     if (scene) {
       scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-    }
-  });
-  
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-  
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
-  
-    const scene = document.querySelector('#room1');
-    if (scene) {
-      scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-    }
-  });
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-  
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
-  
-    const scene = document.querySelector('#room1');
-    if (scene) {
-        scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
     }
   });
   
@@ -85,12 +57,6 @@ document.addEventListener('mousemove', (e) => {
   
     // Obtenir la ligne et la scène
     const line = document.querySelector('.line');
-    const scene = document.querySelector('#room1');
-  
-    // Modifier la perspective en fonction de la position de la souris
-    if (scene) {
-        scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-    }
   
     // Appliquer une animation à la ligne pour qu'elle s'étire et monte le mur
     if (line) {
@@ -99,14 +65,3 @@ document.addEventListener('mousemove', (e) => {
         line.style.transform = `translateZ(-${posX}px) scaleX(${scaleX}) scaleY(${scaleY})`;
     }
   });
-  document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-  
-    const posX = (clientX / innerWidth) * 100;
-    const posY = (clientY / innerHeight) * 100;
-  
-    const scene = document.querySelector('#room1');
-    scene.style.perspectiveOrigin = `${posX}% ${posY}%`;
-  });
-  

@@ -1,17 +1,20 @@
 import {Drawable} from "./Drawable.js"
+import { Explosion } from "./Explosion.js";
 import {PoliceCar} from "./PoliceCar.js";
 import {collision} from "./utils.js";
 import {chargeArrayKey} from "../../../assets/js/inventory.js";
 
 
-class GameEngine {
+export class GameEngine {
 
-    canvas = null
-    ctx = null
-    items = []
-    lasers = []
-
-    player= null
+    canvas = null;
+    ctx = null;
+    items = [];
+    lasers = [];
+    life = 3;
+    isGameOver = false;
+    player= null;
+    explosions = [];
 
     keys = {
         up: false,
@@ -21,26 +24,20 @@ class GameEngine {
         space: false
     };
 
-    speed = 5
+    speed = 5;
 
     constructor() {
-        this.canvas = document.getElementById('gameRoom3')
-        this.ctx = this.canvas.getContext('2d')
-        this.canvas.width = 840
-        this.canvas.height = 650
-        this.player = new Drawable(300, 50, 'assets/img/tank.png')
-        //  this.policeCar = new Drawable('asset/police_car.png',  300, 500)
+        this.canvas = document.getElementById('gameRoom3');
+        this.ctx = this.canvas.getContext('2d');
+        this.canvas.width = 840;
+        this.canvas.height = 650;
     }
 
     init() {
-        this.initEvent()
+        this.player = new Drawable(300, 50, 'assets/img/tank.png');
+        this.life = 5;
+        this.initEvent();
         this.items = [
-            new Drawable( 300, 500, 'assets/img/police_car.png'),
-            new PoliceCar( 200, 800),
-            new Drawable(  200, 600, 'assets/img/police_car.png'),
-            new PoliceCar(  400, 550),
-            new Drawable(350, 850, 'assets/img/police_car.png'),
-            new PoliceCar(  220, 550),
             new Drawable( 300, 500, 'assets/img/police_car.png'),
             new PoliceCar( 200, 800),
             new Drawable(  200, 600, 'assets/img/police_car.png'),
@@ -87,8 +84,8 @@ class GameEngine {
                 case ' ':
                     const laser = new Drawable(null, null ,'assets/img/laser.png');
                     laser.x = this.player.x + this.player.getImg().width / 2 - laser.getImg().width / 2;
-                    laser.y = this.player.y
-                    this.lasers.push(laser)
+                    laser.y = this.player.y;
+                    this.lasers.push(laser);
                     break;
             }
         });
@@ -96,53 +93,73 @@ class GameEngine {
 
     update() {
 
-        let prevX = this.player.x
-        let prevY = this.player.y
+        let prevX = this.player.x;
+        let prevY = this.player.y;
 
         if (this.keys.down) {
-            this.player.y += this.speed
+            this.player.y += this.speed;
         }
         if (this.keys.up) {
-            this.player.y -= this.speed
+            this.player.y -= this.speed;
         }
         if (this.keys.left) {
-            this.player.x -= this.speed
+            this.player.x -= this.speed;
         }
         if (this.keys.right) {
-            this.player.x += this.speed
+            this.player.x += this.speed;
         }
 
         if (this.collisionItem()) {
             this.player.x = prevX;
             this.player.y = prevY;
         }
-
         this.collisionBorder()
 
         this.collisionLaser()
         this.lasers = this.lasers.filter(laser => laser.y < this.canvas.height && !laser.onDestroy)
+
         for (let laser of this.lasers)
         {
-            laser.y += 10
+            laser.y += 10;
         }
 
+        for (let explosion of this.explosions) {
+            if (!explosion.isFinished) {
+                explosion.currentFrameIndex++;
+
+                if(explosion.currentFrameIndex >= explosion.images.length) {
+                    explosion.isFinished = true;
+                }
+            }
+        }
+
+        this.explosions = this.explosions.filter(explosion => {
+            return !explosion.isFinished;
+        })
+
+        !this.isGameOver ? this.gameOver() : null;
     }
 
     collisionItem() {
         this.items = this.items.filter(item => !item.onDestroy)
-        for (let item of this.items)
-        {
+        for (let item of this.items) {
             if (collision(this.player, item)) {
+                item.onDestroy = true;
+                this.life -= 1;
                 return true;
             }
-            item.y -= 1
+            if (item.y < 0) {
+                this.life -= 1;
+                item.onDestroy = true;
+            }
+            item.y -= 1;
         }
-        return false
+        return false;
     }
 
     collisionBorder() {
         if (this.player.x < 0) {
-            this.player.x = 0
+            this.player.x = 0;
         }
         for (const item of this.items) {
             if(item.y <= 0) {
@@ -150,35 +167,51 @@ class GameEngine {
             }
         }
         if (this.player.y < 0) {
-            this.player.y= 0
+            this.player.y= 0;
         }
         if (this.player.x + this.player.getImg().width > this.canvas.width) {
-            this.player.x = this.canvas.width - this.player.getImg().width
+            this.player.x = this.canvas.width - this.player.getImg().width;
         }
         if (this.player.y + this.player.getImg().height > this.canvas.height) {
-            this.player.y = this.canvas.height - this.player.getImg().height
+            this.player.y = this.canvas.height - this.player.getImg().height;
         }
     }
 
     draw() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         for (let item of this.items)
         {
-            this.ctx.drawImage(item.getImg(), item.x, item.y)
+            this.ctx.drawImage(item.getImg(), item.x, item.y);
         }
         for (let laser of this.lasers) {
-            this.ctx.drawImage(laser.getImg(), laser.x, laser.y)
+            this.ctx.drawImage(laser.getImg(), laser.x, laser.y);
         }
 
-        this.ctx.drawImage(this.player.getImg(), this.player.x, this.player.y)
+        this.ctx.drawImage(this.player.getImg(), this.player.x, this.player.y);
+
+        for (let explosion of this.explosions) {
+            this.ctx.drawImage(explosion.getImg(), explosion.x, explosion.y);
+        }
+    }
+
+    createBlastSound() {
+        const explosionSound = new Audio('assets/img/sounds/explosion.wav');
+        return explosionSound.play();
+    }
+
+    createEnnemyExplosion(item) {
+        const explosion = new Explosion(null, null);
+        explosion.x = item.x;
+        explosion.y = item.y;
+        this.explosions.push(explosion);
     }
 
     gameLoop() {
         if (this.items.length === 0) {
-            this.gameOver()
+            this.gameOver();
         }
-        this.update()
-        this.draw()
+        this.update();
+        this.draw();
         window.requestAnimationFrame(() => {
             if(!this.collisionItem()){
                 this.gameLoop()
@@ -189,14 +222,14 @@ class GameEngine {
     }
 
     run() {
-        this.init()
-        let count = 0
+        this.init();
+        let count = 0;
         for (let item of this.items)
         {
             item.loaded(() => {
-                console.log(item)
+                console.log(item);
                 if (++count === this.items.length) {
-                    this.gameLoop()
+                    this.gameLoop();
                 }
             })
         }
@@ -206,20 +239,27 @@ class GameEngine {
         for (let laser of this.lasers) {
             for (let item of this.items) {
                 if (collision(laser, item)) {
-                    laser.onDestroy = true
-                    item.onDestroy = true
+                    laser.onDestroy = true;
+                    item.onDestroy = true;
+                    this.createEnnemyExplosion(item);
+                    this.createBlastSound().then();
                 }
             }
         }
     }
 
     gameOver() {
-        document.getElementById('room3').classList.add('hide');
-        document.querySelector('#room3 button').classList.remove('hide');
-        document.querySelector('#room3 button').style.zIndex = 202;
-        chargeArrayKey(document.querySelector('#room3 button'));
-        document.querySelector('#room3').style.zIndex = 200;
+        if (this.life > 0 && this.items.length === 0) {
+            this.isGameOver = true;
+            chargeArrayKey(document.querySelector('#room3 button'));
+        } else if (this.life <= 0) {
+            this.isGameOver = true;
+            document.getElementById('titleMenu').innerText = 'GAME OVER';
+            document.getElementById('contentMenu').innerText = 'LOSEEEEEER !!!';
+            document.getElementById('startBtn').classList.add('hide');
+            document.getElementById('menuRoom3').classList.remove('hide');
+            setTimeout(() => window.location.reload(), 5000);
+        }
+
     }
 }
-
-export { GameEngine }

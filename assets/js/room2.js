@@ -41,7 +41,9 @@ coffre1.addEventListener("click", function () {
 
 
 parchemin.addEventListener("click", function () {
-    isParchemin = true
+    chargeArrayKey(document.querySelector('#parchemin'));
+    isParchemin = true;
+    document.querySelector('#parchemin').style.visibility = 'hidden';
 });
 
 
@@ -51,7 +53,6 @@ key.addEventListener("click", function () {
         dialog('flex', "Parchemin abscent !", "Veuillez recuperer le parchemin avant svp!")
      }else {
         key.style.visibility = "hidden";
-        chargeArrayKey(document.querySelector('#key'));
         isKey = true
      } 
 });
