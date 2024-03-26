@@ -1,5 +1,5 @@
-import {canvas} from "./utils.js";
 import {Player} from "./Player.js";
+import {canvas} from "./utils.js";
 
 export class Opponent extends Player {
     constructor(x, y, width, height, ctx, innerColor, outerColor) {
@@ -12,7 +12,7 @@ export class Opponent extends Player {
         this.ctx.fillStyle = "black";
         this.ctx.fillRect(canvas.width / 2 + 10, 0, canvas.width / 2, canvas.height);
     }
-    moveTo(y) {
+    moveTo({x, y}) {
         //Opponent AI
         //Every second step there is a 50% chance of a much smaller
         //Move towards the intersection of the ball
