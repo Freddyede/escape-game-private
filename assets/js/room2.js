@@ -99,7 +99,7 @@ btn_restart.addEventListener("click", function () {
     key.style.visibility = "visible";
     item2.style.display = "none";
     safe.style.visibility = "visible";
-    window.location.reload();
+   // window.location.reload();
 });
 
 

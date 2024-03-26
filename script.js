@@ -32,7 +32,7 @@ function chooseDoor(choice) {
             });
         } else {
             resultElement.textContent = 'Mauvaise porte... Jeu terminé !';
-            setInterval(() => window.location.reload(), 1000);
+           // setInterval(() => window.location.reload(), 1000);
         }
         door1.disabled = true;
         door2.disabled = true;
