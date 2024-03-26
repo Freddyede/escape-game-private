@@ -1,9 +1,6 @@
-import { GameEngine } from "../../../src/Rooms/3/GameEngine.js";
-
-
-const game = new GameEngine()
+import { draw } from "../../../src/Rooms/3/GameEngine.js";
 
 document.getElementById('startBtn').onclick = () => {
     document.getElementById('menuRoom3').classList.add('hide');
-    game.run()
+    draw();
 }

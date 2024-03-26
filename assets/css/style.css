@@ -151,11 +151,8 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    background: url("/assets/img/background.png") no-repeat;
-    background-size: cover;
     width: 100%;
     height: 100%;
-    animation: road 5s linear infinite;
 }
 
 .menu {
@@ -171,7 +168,6 @@ canvas {
     background-image: url("https://w0.peakpx.com/wallpaper/413/615/HD-wallpaper-tv-show-rick-and-morty-breaking-bad-morty-smith-rick-sanchez.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    text-decoration: underline;
     text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
     0 0 10px rgba(255, 255, 255, 0.38),
     0 0 21px #88039b,
@@ -180,7 +176,9 @@ canvas {
     0 0 92px #88039b,
     0 0 102px #88039b,
     0 0 151px #88039b;
-
+    h1, p {
+        text-decoration: underline;
+    }
     .gamePresentation {
         font-family: var(--room3-font-family-text-element);
         font-size: 3.5rem;
@@ -241,8 +239,6 @@ canvas {
         height: 100%;
     }
     .menu {
-        border: 1px solid red;
-
         .gamePresentation {
             font-family: var(--room3-font-family-text-element);
             font-size: 3.5rem;
