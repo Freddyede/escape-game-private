@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, rooms[currentRoomIndex].offsetTop);
 
     // Stopper le son dans la salle 0 si nécessaire
-    if (currentRoomIndex == 1 || currentRoomIndex == 6) {
+    if (currentRoomIndex == 1 || currentRoomIndex == 4) {
       stopeSoudRoom0(false);
     }
 
