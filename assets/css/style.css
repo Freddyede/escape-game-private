@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
- 
+
 .room {
   width: 100vw;
   height: 100vh;
@@ -11,37 +11,40 @@
 }
 
 #room1 {
-    position: absolute;
-    z-index: 2500;
-    background-color: #000;
-    width: 100%;
-    height: 100%;
-    perspective: 1000px;
-    perspective-origin: 50% 50%;
+  position: absolute;
+  z-index: 2500;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
 }
 #room2 {
-    position: absolute;
-    z-index: 2000;
+  position: absolute;
+  z-index: 2000;
 }
 #room3 {
-    position: absolute;
-    top:0;
-    z-index: 1500;
-    background-color: var(--background-room-3);
-    width: 100vw;
-    height: 92.9%;
+  position: absolute;
+  top: 0;
+  z-index: 1500;
+  background-color: var(--background-room-3);
+  width: 100vw;
+  height: 92.9%;
 }
 
 #room4 {
-    background-size: cover;
-    position: absolute;
-    z-index: 1000;
-    background: url(/assets/img/room4/fondDonjon.png) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  z-index: 1000;
+  background: url(/assets/img/room4/fondDonjon.png) no-repeat center;
+  background-size: cover;
 }
 
-#room5{
-    position: absolute;
-    z-index: 500;
+#room5 {
+  position: absolute;
+  z-index: 500;
+  background: url(/assets/img/endGame.jpg) no-repeat center;
+  background-size: cover;
 }
 
 .room button[data-key="key1"] {
@@ -101,16 +104,16 @@
 }
 
 .navbar label i {
-    border: 1px solid #4F4F4F;
-    width: 175px;
-    background-color: #E5E5E5;
-    color: #000000;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5vh;
-    margin: 10px;
+  border: 1px solid #4f4f4f;
+  width: 175px;
+  background-color: #e5e5e5;
+  color: #000000;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  margin: 10px;
 }
 
 #broom {
@@ -135,169 +138,148 @@
 
 /*  CANVAS ELEMENTS  */
 .canvasElement {
-    width: var(--hundred-percent);
-    margin: auto;
+  width: var(--hundred-percent);
+  margin: auto;
 }
 
 .hide {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .show {
-    visibility: visible;
+  visibility: visible;
 }
 
 canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .menu {
-    width: 100%;
-    height: 100%;
-    top: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 0;
+  background-image: url("https://w0.peakpx.com/wallpaper/413/615/HD-wallpaper-tv-show-rick-and-morty-breaking-bad-morty-smith-rick-sanchez.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.38), 0 0 21px #88039b, 0 0 42px #88039b,
+    0 0 82px #88039b, 0 0 92px #88039b, 0 0 102px #88039b, 0 0 151px #88039b;
+  h1,
+  p {
+    text-decoration: underline;
+  }
+  .gamePresentation {
+    font-family: var(--room3-font-family-text-element);
+    font-size: 3.5rem;
+    color: rgb(255, 0, 0);
     position: absolute;
+    top: 5%;
+    text-align: center;
+    left: 27.5%;
+  }
+  .playButtonRoom3 {
+    position: absolute;
+    width: 250px;
+    height: 45px;
+    border-radius: 5px;
+    z-index: 2;
+    outline: none;
+    cursor: pointer;
+    top: 50%;
+    font-family: var(--room3-font-family-button-element);
+    font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    left: 0;
-    background-image: url("https://w0.peakpx.com/wallpaper/413/615/HD-wallpaper-tv-show-rick-and-morty-breaking-bad-morty-smith-rick-sanchez.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: rgb(255, 255, 255);
     text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
-    0 0 10px rgba(255, 255, 255, 0.38),
-    0 0 21px #88039b,
-    0 0 42px #88039b,
-    0 0 82px #88039b,
-    0 0 92px #88039b,
-    0 0 102px #88039b,
-    0 0 151px #88039b;
-    h1, p {
-        text-decoration: underline;
+      0 0 10px rgba(255, 255, 255, 0.38), 0 0 21px #88039b, 0 0 42px #88039b,
+      0 0 82px #88039b, 0 0 92px #88039b, 0 0 102px #88039b, 0 0 151px #88039b;
+    background-color: #000000;
+    letter-spacing: 1rem;
+    left: 42.5%;
+    &:hover {
+      text-shadow: none;
     }
-    .gamePresentation {
-        font-family: var(--room3-font-family-text-element);
-        font-size: 3.5rem;
-        color: rgb(255, 0, 0);
-        position: absolute;
-        top: 5%;
-        text-align: center;
-        left: 27.5%;
+    &:active {
+      color: #ff0000;
     }
-    .playButtonRoom3 {
-        position: absolute;
-        width: 250px;
-        height: 45px;
-        border-radius: 5px;
-        z-index: 2;
-        outline: none;
-        cursor: pointer;
-        top:50%;
-        font-family: var(--room3-font-family-button-element);
-        font-size: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: rgb(255, 255, 255);
-        text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
-            0 0 10px rgba(255, 255, 255, 0.38),
-            0 0 21px #88039b,
-            0 0 42px #88039b,
-            0 0 82px #88039b,
-            0 0 92px #88039b,
-            0 0 102px #88039b,
-        0 0 151px #88039b;
-        background-color: #000000;
-        letter-spacing: 1rem;
-        left: 42.5%;
-        &:hover {
-            text-shadow: none;
-        }
-        &:active {
-            color: #FF0000;
-        }
-    }
+  }
 }
 
 .room-key {
-    position: absolute;
-    top: 30px;
-    border: 1px solid blue;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
+  position: absolute;
+  top: 30px;
+  border: 1px solid blue;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
 }
 @media (max-width: 1548px) {
-    canvas {
-        height: 100%;
+  canvas {
+    height: 100%;
+  }
+  .menu {
+    .gamePresentation {
+      font-family: var(--room3-font-family-text-element);
+      font-size: 3.5rem;
+      color: rgb(255, 255, 255);
+      top: 5%;
+      text-align: center;
+      left: 5%;
+      text-decoration: underline;
+      position: absolute;
+      text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.38), 0 0 21px #88039b, 0 0 42px #88039b,
+        0 0 82px #88039b, 0 0 92px #88039b, 0 0 102px #88039b, 0 0 151px #88039b;
     }
-    .menu {
-        .gamePresentation {
-            font-family: var(--room3-font-family-text-element);
-            font-size: 3.5rem;
-            color: rgb(255, 255, 255);
-            top: 5%;
-            text-align: center;
-            left: 5%;
-            text-decoration: underline;
-            position: absolute;
-            text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
-            0 0 10px rgba(255, 255, 255, 0.38),
-            0 0 21px #88039b,
-            0 0 42px #88039b,
-            0 0 82px #88039b,
-            0 0 92px #88039b,
-            0 0 102px #88039b,
-            0 0 151px #88039b;
-
-        }
-        .playButtonRoom3 {
-            position: absolute;
-            width: 250px;
-            height: 45px;
-            border-radius: 5px;
-            z-index: 25;
-            outline: none;
-            cursor: pointer;
-            top:50%;
-            font-family: var(--room3-font-family-button-element);
-            font-size: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(255, 255, 255);
-            text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
-            0 0 10px rgba(255, 255, 255, 0.38),
-            0 0 21px #88039b,
-            0 0 42px #88039b,
-            0 0 82px #88039b,
-            0 0 92px #88039b,
-            0 0 102px #88039b,
-            0 0 151px #88039b;
-            background-color: #000000;
-            letter-spacing: 1rem;
-            left: 35.5%;
-            &:hover {
-                text-shadow: none;
-            }
-            &:active {
-                color: #FF0000;
-            }
-        }
+    .playButtonRoom3 {
+      position: absolute;
+      width: 250px;
+      height: 45px;
+      border-radius: 5px;
+      z-index: 25;
+      outline: none;
+      cursor: pointer;
+      top: 50%;
+      font-family: var(--room3-font-family-button-element);
+      font-size: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 7px rgba(255, 255, 255, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.38), 0 0 21px #88039b, 0 0 42px #88039b,
+        0 0 82px #88039b, 0 0 92px #88039b, 0 0 102px #88039b, 0 0 151px #88039b;
+      background-color: #000000;
+      letter-spacing: 1rem;
+      left: 35.5%;
+      &:hover {
+        text-shadow: none;
+      }
+      &:active {
+        color: #ff0000;
+      }
     }
-    canvas {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        top: 0;
-        left: 0;
-    }
+  }
+  canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
-
