@@ -83,13 +83,20 @@
 
 .hidden-checkbox:checked + i {
   color: green;
+
+  z-index: 1001;
+}
+
+.hidden-checkbox:checked + img {
+  border-color: green;
+  border: 0.5vw solid green;
 }
 
 .navbar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  display: var(--display-flex);
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--background-navbar);
@@ -102,6 +109,19 @@
   height: 5vh;
   margin: 10px;
   cursor: pointer;
+}
+
+.navbar label {
+  cursor: pointer;
+}
+.navbar img {
+  width: 5vw;
+  height: 5vh;
+  border: 1px solid #000;
+  transition: transform 0.2s ease;
+}
+.navbar img:hover {
+  transform: scale(1.2);
 }
 
 .navbar label i {
