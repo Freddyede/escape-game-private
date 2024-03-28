@@ -3,7 +3,8 @@
 :root {
   /* COMMONS */
   --display-flex: flex;
-  --background-navbar: #333333;
+  --background-navbar: #fefee2;
+  color: #000000;
   --black-solid-border: 1px solid #000000;
   /* ROOM 3 */
   --room3-font-family-button-element: "Rubik Glitch", system-ui;
